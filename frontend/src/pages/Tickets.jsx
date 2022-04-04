@@ -7,7 +7,7 @@ import TicketItem from '../components/TicketItem'
 
 const Tickets = () => {
   const { tickets, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.ticket
+    (state) => state.tickets
   )
 
   const dispatch = useDispatch()
