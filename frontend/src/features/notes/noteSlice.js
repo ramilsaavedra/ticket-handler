@@ -32,7 +32,7 @@ export const getNotes = createAsyncThunk(
 export const noteSlice = createSlice({
   name: 'note',
   initialState,
-  reducer: {
+  reducers: {
     reset: (state) => initialState,
   },
   extraReducers: (builder) => {
