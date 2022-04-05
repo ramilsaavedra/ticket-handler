@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getTicket, closeTicket } from '../features/tickets/ticketSlice'
-import { getNotes, reset as noteReset } from '../features/notes/noteSlice'
+import {
+  getNotes,
+  reset as noteReset,
+  createNote,
+} from '../features/notes/noteSlice'
 import { FaPlus } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 import Modal from 'react-modal'
@@ -73,7 +77,7 @@ const Ticket = () => {
 
   const onNoteSubmit = (e) => {
     e.preventDefault()
-    console.log(noteText)
+    dispatch(createNote({ noteText, ticketId }))
     closeModal()
   }
 
